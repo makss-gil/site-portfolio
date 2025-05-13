@@ -45,3 +45,17 @@ portfolioCloseBtn.forEach(button => {
         })
     })
 })
+
+var swiper = new Swiper(".client-swiper", {
+    slidesPerView: 1, // кількість слайдів яку хочемо показувати
+    spaceBetween: 30, // відстань між слайдами
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
