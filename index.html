@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <title>Portfolio Website</title>
 </head>
 
@@ -14,6 +16,14 @@
     <button class="btn scrollToTop flex-center">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+   <!-- Theme Toggle Button -->
+<div class="them-btn">
+    <i class="fa-solid fa-moon"></i>
+    <i class="fa-solid fa-sun"></i>
+</div>
+
+
     <header class="header">
         <div class="container">
             <div class="header-wrapper">
@@ -40,12 +50,13 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="nav-menu-btm"></div>
+                <div class="nav-menu-btn" id="nav-toggle"></div>
             </div>
         </div>
     </header>
     <main>
         <!-- ===== HOME section ===== -->
+
         <section class="home" id="home">
             <div class="container home-wrapper">
                 <div class="media-icons">
@@ -86,8 +97,10 @@
                 <i class="fa-solid fa-arrow-down"></i>
             </a>
         </section>
+        
         <!-- ===== end HOME section ===== -->
         <!-- ===== ABOUT section ===== -->
+<!-- 
         <section class="about section" id="about">
             <div class="container flex-center">
                 <h2 class="inner-title">About Me</h2>
@@ -124,8 +137,10 @@
                   </div>
             </div>
         </section>
+         -->
         <!-- ===== end ABOUT section ===== -->
         <!-- ===== SKILLS section ===== -->
+<!-- 
         <section class="skills section" id="skills">
             <div class="container flex-center">
                 <h2 class="inner-title">Skills</h2>
@@ -246,8 +261,10 @@
             </div>
             
         </section>
+         -->
         <!-- ===== end SKILLS section ===== -->
         <!-- ===== SERVICES section ===== -->
+<!-- 
         <section class="services section" id="services">
             <div class="container flex-center">
                 <h2 class="inner-title">Services</h2>
@@ -401,8 +418,10 @@
                 </div>
             </div>
         </section>
+         -->
         <!-- ===== end SERVICES section ===== -->
         <!-- ===== PORTFOLIO section ===== -->
+<!-- 
         <section class="portfolio section" id="portfolio">
             <div class="container flex-center">
                 <h2 class="inner-title">Portfolio</h2>
@@ -519,8 +538,10 @@
                 </div>
             </div>
         </section>
+         -->
         <!-- ===== end PORTFOLIO section ===== --> 
-        <!-- ===== GIT IN TOUCH section ===== --> 
+        <!-- ===== GIT IN TOUCH section ===== -->
+<!-- 
         <div class="get-in-touch sub-section">
             <div class="container flex-center">
                 <div class="contact-card">
@@ -535,8 +556,10 @@
                 </div>
             </div>
         </div>
+         -->
         <!-- ===== end GIT IN TOUCH section ===== --> 
         <!-- ===== OUR CLIENTS section ===== --> 
+<!-- 
         <section class="section our-client" id="our-client">
             <div class="container flex-center">
                 <h2 class="inner-title">Our Clients</h2>
@@ -586,8 +609,10 @@
                 </div>
             </div>
         </section>
+         -->
         <!-- ===== end OUR CLIENTS section ===== --> 
         <!-- ===== CONTACT section ===== -->
+<!-- 
         <section class="contact section" id="contact">
             <div class="container flex-center">
                 <h2 class="inner-title">Contact Me</h2>
@@ -632,67 +657,70 @@
                 </div>
             </div>
         </section>
+         -->
         <!-- ===== end CONTACT section ===== -->  
-        <!-- ===== FOOTER section ===== -->
-        <footer class="footer">
-            <div class="container footer-wrapper">
-                <div class="about-group">
-                    <h2>DevHilit</h2>
-                    <p>Frontend Developer</p>
-                    <a href="#about">About me</a>
-                </div>
-                <div class="hr"></div>
-                <div class="info-group">
-                    <h3>More</h3>
-                    <ul>
-                        <li><a href="#skills">skills</a></li>
-                        <li><a href="#services">services</a></li>
-                        <li><a href="#portfolio">portfolio</a></li>
-                        <li><a href="#contact">contact</a></li>
-                    </ul>
-                </div>
-                <div class="hr"></div>
-                <div class="follow-group">
-                    <h3>Follow</h3>
-                    <ul>
-                        <li>
-                            <a href="" target="_blank">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <i class="fa-brands fa-telegram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" target="_blank">
-                                <i class="fa-brands fa-square-x-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        
+</main>
+
+    <footer class="footer">
+        <div class="container footer-wrapper">
+            <div class="about-group">
+                <h2>DevHilit</h2>
+                <p>Frontend Developer</p>
+                <a href="#about">About me</a>
             </div>
-            <p class="footer-copyright">&#169 <span class="year">2025</span> by Hilitukha Maksym (DevHilit). All rights reserved.</p>
-        </footer>
-        <!-- ===== end FOOTER section ===== -->
-    </main>
+            <div class="hr"></div>
+            <div class="info-group">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#services">services</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </div>
+            <div class="hr"></div>
+            <div class="follow-group">
+                <h3>Follow</h3>
+                <ul>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copyright">&#169 <span class="year">2025</span> by Hilitukha Maksym (DevHilit). All rights reserved.</p>
+    </footer>
+
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="./js/scrollreveal.js"></script>
     <script src="js/main.js"></script>
 </body>
 

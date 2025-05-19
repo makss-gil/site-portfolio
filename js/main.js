@@ -30,8 +30,6 @@ window.addEventListener("scroll", function(){
     })
 })
 
-
-
 // =============== SCROLL TO TOP BUTTON ===============
 const scrollToTop = document.querySelector(".scrollToTop")
 window.addEventListener("scroll", function(){
@@ -41,6 +39,51 @@ window.addEventListener("scroll", function(){
 scrollToTop.addEventListener("click", function(){
     document.body.scrollToTop = 0
     document.documentElement.scrollTop = 0
+})
+
+// =============== THEM LIGHT / DARK ===============
+const themeBtn = document.querySelector(".them-btn")
+
+const getCurrentTheme = () => document.body.classList.contains("dark-theme") ? "dark" : "light"
+
+const getCurrentIcon = () => themeBtn.classList.contains("sun") ? "sun" : "moon"
+
+themeBtn.addEventListener("click", function(){
+    document.body.classList.toggle("dark-theme")
+    themeBtn.classList.toggle("sun")
+
+    localStorage.setItem("saved-theme", getCurrentTheme())
+    localStorage.setItem("saved-icon", getCurrentIcon())
+})
+
+const savedTheme = localStorage.getItem("saved-theme")
+const savedIcon = localStorage.getItem("saved-icon")
+
+// Применяем сохраненную тему и значок
+
+if(savedTheme){
+    document.body.classList[savedTheme === "dark" ? "add" : "remove"]("dark-theme")
+    themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("sun")
+}
+
+// =============== MEDIA NAV-MENU TOGGLE ===============
+const navBtn = document.querySelector(".nav-menu-btn")
+const navBar = document.querySelector(".nav")
+const navMenu = document.querySelector(".nav-menu")
+const navLinks = document.querySelectorAll(".nav-link")
+
+navBtn.addEventListener("click", function(){
+    navBtn.classList.toggle("close")
+    navBar.classList.toggle("active")
+    navMenu.classList.toggle("active")
+})
+
+navLinks.forEach(function(link){
+    link.addEventListener("click", function(){
+        navBtn.classList.remove("close")
+        navBar.classList.remove("active")
+        navMenu.classList.remove("active")
+    })
 })
 
 
@@ -106,3 +149,15 @@ var swiper = new Swiper(".client-swiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+
+ScrollReveal({
+    reset: true,
+    distance: "60px",
+    duration: 2500,
+    delay: 100
+})
+
+ScrollReveal().reveal('.home-info h1', {delay: 400, origin: "left"});
+ScrollReveal().reveal('.home-img', {delay: 500, origin: "right"});
+ScrollReveal().reveal('.media-icons a', {delay: 300, origin: "left", interval: 90});
+ScrollReveal().reveal('.home-info h3, .home-info p, .home-info-link', {delay: 700, origin: "left"});
