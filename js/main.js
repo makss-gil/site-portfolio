@@ -7,8 +7,6 @@ window.addEventListener("scroll", function(){
             //addEventListener -  Додає обробник події до об'єкта.
             // querySelector - для пошуку першої кнопки на веб-сторінці.
 
-
-
 // =============== NAV-ITEM effect color ===============
 window.addEventListener("scroll", function(){
     const section = this.document.querySelectorAll("section")
@@ -86,6 +84,56 @@ navLinks.forEach(function(link){
     })
 })
 
+// ====== включення ScrollReveal section  ===============
+const revealConfiguration = [
+    {selector: '.inner-title, .inner-second-title', config: {opacity:0, delay: 500}},
+    {selector: '.home-info h1, .about-img, .services-description, .contact-left h2', config: {delay: 400, origin: "left"}},
+    {selector: '.home-img, .description, .first-row, .second-row, .third-row', config: {delay: 500, origin: "right"}},
+    {selector: '.skills-description, .contact-card .title, .contact-right p', config: {delay: 500, origin: "top"}},
+    {selector: '.media-icons a, .list-item, .service-card, .portfolio-img-card', config: {delay: 300, origin: "left", interval: 90}},
+    {selector: '.list-item, .inner-info-link, .contact-list li', config: {origin: "left", delay: 300, interval: 200}},
+    {selector: '.education', config: {delay: 300, origin: "bottom", interval: 200}},
+    {selector: '.home-info h3, .home-info p, .home-info-link', config: {delay: 700, origin: "left"}},
+]
+
+function initializeScrollReveal(){
+    window.sr = ScrollReveal({
+        reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 100
+    })
+
+    revealConfiguration.forEach(({selector, config}) => {
+        sr.reveal(selector, config)
+    })
+}
+
+initializeScrollReveal()
+
+// ========== відключення ScrollReveal ===========
+function disableScrollReveal(){
+    sr.clean() // очистка
+    document.documentElement.style.overflowY = "hidden"
+    document.body.style.overflowY = "hidden"
+    revealConfiguration.forEach(({selector}) =>{
+        document.querySelectorAll(selector).forEach(el => {
+            el.style.transform = ""
+            el.style.opacity = ""
+            el.style.transition = ""
+            el.style.visibility = ""
+        })
+    })
+    console.log("func off");
+}
+
+// ========== повторне включення ScrollReveal ===========
+function enableScrollReveal(){
+    document.documentElement.style.overflowY = ""
+    document.body.style.overflowY = ""
+    initializeScrollReveal()
+    console.log("func work");
+}
 
 
 // =============== SETVICES section modal ===============
@@ -95,6 +143,7 @@ const modalCloseBtn = document.querySelectorAll(".modal-close-btn")
 
 const modal = function(modalClick){
     serviceModal[modalClick].classList.add("active")
+    disableScrollReveal()
 }
 
 learnMoreBtn.forEach((button, i) => {
@@ -104,10 +153,11 @@ learnMoreBtn.forEach((button, i) => {
 })
 
 modalCloseBtn.forEach(button => {
-    button.addEventListener("click", () =>{
+    button.addEventListener("click", () => {
         serviceModal.forEach(modal => {
             modal.classList.remove("active")
         })
+        enableScrollReveal()
     })
 })
 
@@ -120,6 +170,7 @@ const portfolioCloseBtn = document.querySelectorAll(".portfolio-close-btn")
 
 const portfolioModal = function(modalClick){
     portfolioModals[modalClick].classList.add("active")
+    disableScrollReveal()
 }
 
 imgCard.forEach((button, i) => {
@@ -133,6 +184,7 @@ portfolioCloseBtn.forEach(button => {
         portfolioModals.forEach(modelView => {
           modelView.classList.remove("active")  
         })
+        enableScrollReveal()
     })
 })
 
@@ -150,14 +202,4 @@ var swiper = new Swiper(".client-swiper", {
     },
   });
 
-ScrollReveal({
-    reset: true,
-    distance: "60px",
-    duration: 2500,
-    delay: 100
-})
 
-ScrollReveal().reveal('.home-info h1', {delay: 400, origin: "left"});
-ScrollReveal().reveal('.home-img', {delay: 500, origin: "right"});
-ScrollReveal().reveal('.media-icons a', {delay: 300, origin: "left", interval: 90});
-ScrollReveal().reveal('.home-info h3, .home-info p, .home-info-link', {delay: 700, origin: "left"});

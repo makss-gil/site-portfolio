@@ -119,6 +119,22 @@ main{
     flex: 1;
 }
 
+/* ===== SCROLL BAR ===== */
+    ::-webkit-scrollbar{
+        width: 10px;
+        background: var(--scroll-bar-color);
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background: var(--scroll-thumb-color);
+        border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+        border-radius: 20px;
+        background: var(--scroll-thumb-hover-color);
+    }
+
 .container {
     max-width: 1250px;
     width: 100%;
@@ -158,9 +174,9 @@ main{
 /* === theme button light/dark === */
 .them-btn{
     position: fixed;
-    z-index: 11;
+    z-index: 9;
     right: 0;
-    top: 150px;
+    top: 80px;
     background: var(--bg-transparent-color-01);
     backdrop-filter: blur(20px);
     width: 50px;
@@ -421,8 +437,6 @@ nav.nav {
 .professional-list{
     display: flex;
     column-gap: 30px;
-    justify-content: center;
-    align-items: center;
 }
 
 .professional-list .list-item{
@@ -723,12 +737,13 @@ nav.nav {
     background: var(--bg-transparent-color);
     visibility: hidden;
     opacity: 0;
-    transition: .3s linear;
+    
 }
 
 .service-modal.active{
     visibility: visible;
     opacity: 1;
+    transition: .3s linear;
 }
 
 .service-modal-body{
@@ -916,6 +931,7 @@ nav.nav {
 .get-in-touch .contact-card{
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     position: relative;
     width: 90%;
     padding: 50px;
@@ -1007,6 +1023,12 @@ nav.nav {
     font-size: 18px;
 }
 
+.client-swiper .swiper-pagination {
+    bottom: -3px
+}
+
+  
+
 .swiper-button-prev::after,
 .swiper-button-next::after{
     content: '';
@@ -1031,7 +1053,7 @@ nav.nav {
 }
 
 .contact-left{
-    min-width: 418px;
+    max-width: 418px;
     width: 100%;
 }
 
@@ -1071,7 +1093,7 @@ nav.nav {
 }
 
 .contact-right{
-    min-width: 536px;
+    max-width: 536px;
     width: 100%;
 
 }
@@ -1214,6 +1236,8 @@ nav.nav {
     text-align: center;
     padding: 0 15px;
 }
+
+
 /* ===== end FOOTER section ===== */
 
 /* ===== MEDIA query max-width 980px ===== */
@@ -1230,15 +1254,6 @@ nav.nav {
 
     .home-img{
         order: 1;
-    }
-
-    .follow-group ul {
-        
-        
-        gap: 10px;
-        
-        
-        
     }
 
     .home-img img {
@@ -1259,12 +1274,19 @@ nav.nav {
         justify-items: center;
         column-gap: 60px;
         row-gap: 30px;
-        
-
     }
 
     .media-icons .fa-brands{
         font-size: 30px;
+    }
+
+    .about-wrapper{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .professional-list{
+        flex-wrap: wrap;
     }
 }
 
@@ -1319,7 +1341,7 @@ nav.nav {
     }
 
     .nav-menu.active{
-        transform: translateY(0%);
+        transform: translateY(0%);        
     }
 
     .nav-menu li{
@@ -1334,6 +1356,62 @@ nav.nav {
     .about-group{
         text-align: center;
     }
+
+    .get-in-touch .contact-card{
+        width: 100%;
+        padding: 25px;
+    }
+
+    .client-swiper .swiper-slide{
+        flex-direction: column;
+    }
+
+    .contact-wrapper{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hr {
+        border: 1px solid var(--liner-color) ;
+    }
+}
+
+@media (max-width:768px){
+        
+    .contact-card h2{
+        font-size: 40px;
+    }
+
+    .contact-card h3{
+        font-size: 28px;
+    }
+
+    .contact-card h4{
+        font-size: 18px;
+    }
+
+    .get-in-touch-link {
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    .swiper-button-prev,
+    .swiper-button-next{
+        display: none;
+    }
+
+    .second-row{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .second-row input {
+        width: 100%;
+    }
+    .contact-right p span {
+        display: inline;
+      }
 }
 
 @media (max-width:450px){
@@ -1356,8 +1434,38 @@ nav.nav {
     .info-group a{
         padding: 10px 0;
     }
-}
 
+    .inner-title{
+        font-size: 48px;
+    } 
+
+    .education,
+    .work-exp .experience-card{
+        min-width: 295px;
+    }
+
+    .service-modal-body h3,
+    .portfolio-modal-body h3{
+        font-size: 25px;
+    }
+
+    .service-modal-body,
+    .portfolio-modal-body{
+        padding: 40px 15px 15px;
+    }
+
+    .contact-card h2{
+        font-size: 35px;
+    }
+
+    .contact-right p{
+        font-size: 20px;
+    }
+
+    .client-details p{
+        font-size: 18px;
+    }
+}
 
 
 /* ===== MEDIA query max-width 980px ===== */
